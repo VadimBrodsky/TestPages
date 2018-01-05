@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>autoplay tests</title>
+    <style type="text/css" media="screen">
+      body {
+        margin: 1em;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 14px;
+      }
+      table {
+        border: 1px solid #d6d6d6;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td {
+        border: 1px solid #d6d6d6;
+        text-align: center;
+        line-height: 1.5em;
+      }
+      th {
+        border: 1px solid #d6d6d6;
+        text-align: left;
+        font-weight: normal;
+        line-height: 2em;
+      }
+      thead th {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Autoplay Tests</h1>
+
+    <h3>Inline Video Tag</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Link</th>
+          <th>iOS 11</th>
+          <th>Safari 11</th>
+          <th>Chrome 63</th>
+          <th>Chrome 65</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th><a href="./video-autoplay.html">autoplay</a></th>
+          <td>&#128530;</td>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./video-autoplay-muted.html">autoplay, muted</a></th>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./video-autoplay-playsinline.html">autoplay, playsinline</a></th>
+          <td>&#128530;</td>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./video-autoplay-muted-playsinline.html">autoplay, muted, playsinline</a></th>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h3>iFrame - Inline Video Tag</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Link</th>
+          <th>iOS 11</th>
+          <th>Safari 11</th>
+          <th>Chrome 63</th>
+          <th>Chrome 65</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th><a href="./iframe-video-autoplay.html">autoplay</a></th>
+          <td>&#128530;</td>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-video-autoplay-muted.html">autoplay, muted</a></th>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-video-autoplay-playsinline.html">autoplay, playsinline</a></th>
+          <td>&#128530;</td>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-video-autoplay-muted-playsinline.html">autoplay, muted, playsinline</a></th>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>iFrame - Inline Video Tag, out of viewport</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Link</th>
+          <th>iOS 11</th>
+          <th>Safari 11</th>
+          <th>Chrome 63</th>
+          <th>Chrome 65</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th><a href="./iframe-out-video-outplay.html">autoplay</a></th>
+          <td>&#128530;</td>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-out-video-autoplay-muted.html">autoplay, muted</a></th>
+          <td>&#128530;</td>
+          <td>&#128587; starts when in viewport</td>
+          <td>&#128587;</td>
+          <td>&#128587; starts when in viewport</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-out-video-playsinline.html">autoplay, playsinline</a></th>
+          <td>&#128530;</td>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-out-video-autoplay-muted-playsinline.html">autoplay, muted, playsinline</a></th>
+          <td>&#128530;</td>
+          <td>&#128587; starts when in viewport</td>
+          <td>&#128587;</td>
+          <td>&#128587; starts when in viewport</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>iFrame - Inline Video Tag, added by uncontrolled script</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Link</th>
+          <th>iOS 11</th>
+          <th>Safari 11</th>
+          <th>Chrome 63</th>
+          <th>Chrome 65</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th><a href="./iframe-script-video-autoplay.html">autoplay</a></th>
+          <td>&#128530;</td>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-script-video-autoplay-muted.html">autoplay, muted</a></th>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-script-video-autoplay-playsinline.html">autoplay, playsinline</a></th>
+          <td>&#128530;</td>
+          <td>&#128530;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+        <tr>
+          <th><a href="./iframe-script-video-autoplay-muted-playsinline.html">autoplay, muted, playsinline</a></th>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+          <td>&#128587;</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </body>
+</html>
