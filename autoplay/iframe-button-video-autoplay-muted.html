@@ -8,21 +8,24 @@
   <body>
     <h1>iFrames</h1>
 
-    <h2>Autoplay Muted</h2>
+    <h2>Autoplay</h2>
+    <button onclick="showVideoiFrame()">Show Video iFrame</button>
     <div id="root"></div>
     <br />
+    <button onclick="showVYiFrame()">Show VY iFrame</button>
     <div id="root2"></div>
 
     <script charset="utf-8">
-      setTimeout(() => {
+      function showVideoiFrame() {
+        console.log('show video iframe clicked');
         document.getElementById('root').innerHTML = '<iframe src="./video-autoplay-muted.html" width="100%" height="300"  scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" style="border:3px solid red;"></iframe>';
-      }, 2000)
+      }
 
-      setTimeout(() => {
+      function showVYiFrame() {
+        console.log('show vy iframe clicked');
         document.getElementById('root2').innerHTML = '<iframe id="vidyard_iframe_w3w4ehDuFvzQEoEgyJrFmp" class="" src="//play.vidyard.dev/w3w4ehDuFvzQEoEgyJrFmp.html?preview=1&autoplay=1&muted=1" width="100%" height="100%" title="Video" aria-label="Video" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" style=""></iframe>';
-      }, 2000)
+      }
     </script>
   </body>
 </html>
-
 

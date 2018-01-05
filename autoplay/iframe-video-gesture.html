@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>vanilla video tag</title>
+    <style type="text/css" media="screen">
+      video { width: 100%; }
+    </style>
+  </head>
+  <body>
+    <h1>Video User Gesture</h1>
+
+    <button id="showButton">Show Autoplay Video</button>
+    <button onclick="sendMessage()">Send Message</button>
+
+
+    <div id="root"></div>
+
+
+    <script charset="utf-8">
+      document.getElementById('showButton').addEventListener('click', showAutoplayVideo);
+      // var interval = 1;
+      
+      function showAutoplayVideo(e) {
+        console.log('show video iframe clicked');
+
+        var iframe = document.createElement('iframe');
+        iframe.src = "./video-user-postmessage.html";
+
+        document.body.appendChild(iframe);
+
+        //setTimeout(()=> sendMessage(iframe), 100);
+
+         iframe.onload = () => {
+           //debugger;
+           console.log('iframe content loaded');
+           sendMessage(iframe);
+           // console.log('interval in', interval);
+           // w.clearInterval(1);
+        }
+
+        /*
+        interval = setInterval(() => {
+          console.log('a');
+          sendMessage();
+        }, 100)
+        */
+
+
+        // console.log('interval out', interval);
+
+
+      function sendMessage(el) {
+        console.log('sending....')
+        el.contentWindow.postMessage('hi', '*');
+      }
+
+        // document.getElementById('root').innerHTML = `<iframe src="" width="100%" height="300"  scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" style="border:3px solid red;"></iframe>`;
+         //var iframe = document.getElementsByTagName('iframe')[0];
+
+        // iframe.addEventListener('load', () => { });
+
+        /*
+        iframe.onload = () => {
+          console.log('iframe content loaded');
+          sendMessage();
+        }
+        */
+      }
+
+    </script>
+
+  </body>
+</html>

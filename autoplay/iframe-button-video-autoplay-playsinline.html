@@ -8,13 +8,15 @@
   <body>
     <h1>iFrames</h1>
 
-    <h2>Autoplay Muted Playsinlne</h2>
+    <h2>Autoplay</h2>
+    <button onclick="showVideoiFrame()">Show Video iFrame</button>
     <div id="root"></div>
 
     <script charset="utf-8">
-      setTimeout(() => {
+      function showVideoiFrame() {
+        console.log('show video iframe clicked');
         document.getElementById('root').innerHTML = '<iframe src="./video-autoplay-muted-playsinline.html" width="100%" height="300"  scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" style="border:3px solid red;"></iframe>';
-      }, 2000)
+      }
     </script>
   </body>
 </html>
