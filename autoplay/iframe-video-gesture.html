@@ -14,60 +14,50 @@
     <button id="showButton">Show Autoplay Video</button>
     <button onclick="sendMessage()">Send Message</button>
 
-
     <div id="root"></div>
 
-
     <script charset="utf-8">
-      document.getElementById('showButton').addEventListener('click', showAutoplayVideo);
-      // var interval = 1;
-      
-      function showAutoplayVideo(e) {
-        console.log('show video iframe clicked');
+    document.getElementById('showButton').addEventListener('click', showAutoplayVideo);
+    var interval;
+    window.addEventListener('message', receiveMessage, false);
 
-        var iframe = document.createElement('iframe');
-        iframe.src = "./video-user-postmessage.html";
+    function showAutoplayVideo(e) {
+      console.log('show video iframe clicked');
 
-        document.body.appendChild(iframe);
+      var iframe = document.createElement('iframe');
+      iframe.src = "./video-user-postmessage.html";
 
-        //setTimeout(()=> sendMessage(iframe), 100);
-
-         iframe.onload = () => {
-           //debugger;
-           console.log('iframe content loaded');
-           sendMessage(iframe);
-           // console.log('interval in', interval);
-           // w.clearInterval(1);
-        }
-
-        /*
-        interval = setInterval(() => {
-          console.log('a');
-          sendMessage();
-        }, 100)
-        */
-
-
-        // console.log('interval out', interval);
-
-
-      function sendMessage(el) {
-        console.log('sending....')
-        el.contentWindow.postMessage('hi', '*');
+      document.body.appendChild(iframe);
+      interval = setInterval(() => {
+        console.log('I AM SPAMMING');
+        sendMessage(iframe);
       }
+        , 50);
+    }
 
-        // document.getElementById('root').innerHTML = `<iframe src="" width="100%" height="300"  scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" style="border:3px solid red;"></iframe>`;
-         //var iframe = document.getElementsByTagName('iframe')[0];
+    function sendMessage(el) {
+      el = el || document.getElementsByTagName('iframe')[0];
+      console.log('sending....')
+      el.contentWindow.postMessage('hi', '*');
+    }
 
-        // iframe.addEventListener('load', () => { });
+    function receiveMessage(m) {
+      console.log('you got a message ', m.data);
+      clearInterval(interval);
+    }
 
-        /*
+
+// document.getElementById('root').innerHTML = `<iframe src="" width="100%" height="300"  scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="" style="border:3px solid red;"></iframe>`;
+//var iframe = document.getElementsByTagName('iframe')[0];
+
+// iframe.addEventListener('load', () => { });
+
+/*
         iframe.onload = () => {
           console.log('iframe content loaded');
           sendMessage();
         }
-        */
-      }
+ */
 
     </script>
 

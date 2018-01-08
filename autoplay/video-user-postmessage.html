@@ -11,18 +11,24 @@
     <script charset="utf-8">
       window.addEventListener("message", receiveMessage, false);
 
-/*
-      window.onload = () => {
-        var video = document.getElementsByTagName('video')[0];
-        video.play().then(() => console.log('playback started')).catch((e) => console.log('playback errror ', e));
-      }
-      */
+      var playbackStarted = false;
 
       function receiveMessage(event) {
-        console.log('message received ', event);
+        console.log('message received ', event.data);
+
         var video = document.getElementsByTagName('video')[0];
-        video.play().then(() => console.log('playback started')).catch((e) => console.log('playback errror ', e));
+          video.play().then(() => {
+            console.log('playback started');
+            playbackStarted = true;
+          }).catch((e) => {
+            console.log('playback errror ', e);
+          });
+
+        if (playbackStarted) {
+          window.parent.postMessage('hello parent', '*');
+        }
       }
+
     </script>
 
   </head>
