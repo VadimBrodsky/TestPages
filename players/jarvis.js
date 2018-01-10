@@ -26,15 +26,7 @@
 
       var lightboxImage = document.createElement('div');
       lightboxImage.className = 'outer_vidyard_wrapper';
-      lightboxImage.innerHTML = `
-        <div class="vidyard_wrapper" onclick="fn_vidyard_${uuid}();">
-          <img alt="lightbox player alt" src="//play.vidyard.${env}/${uuid}.jpg?"
-          width="360">
-          <div class="vidyard_play_button">
-            <a href="javascript:void(0);"></a>
-          </div>
-        </div>
-      `;
+      lightboxImage.innerHTML = `<div class="vidyard_wrapper" onclick="fn_vidyard_${uuid}();"><img alt="lightbox player alt" src="//play.vidyard.${env}/${uuid}.jpg?" width="360"> <div class="vidyard_play_button"> <a href="javascript:void(0);"></a> </div> </div>`;
 
       var embedWrapper = document.createElement('div');
       embedWrapper.appendChild(embedCode);
