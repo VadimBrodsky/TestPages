@@ -50,6 +50,7 @@
     uuid: params.get('uuid') || 'QK4FcA7a4LRsfd5rZa26E8',
   };
   config.playerParams = getPlayerParams(Object.keys(config), params);
+  console.log('params: ', config);
 
   var embed = document.createElement('p');
   switch (config.type) {
