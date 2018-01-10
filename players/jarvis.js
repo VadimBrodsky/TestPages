@@ -9,7 +9,7 @@
         return !configKeys.includes(key);
       })
       .reduce(function(playerParamsString, filterdKey) {
-        return playerParamsString + `${filterdKey}=${params.get(filterdKey)}&`;
+        return playerParamsString += `${filterdKey}=${params.get(filterdKey)}&`;
       }, '');
   }
 
